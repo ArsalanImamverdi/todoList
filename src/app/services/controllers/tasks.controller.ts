@@ -17,9 +17,9 @@ export class TaskController extends Controller<Tasks>{
         let colorsController = <ColorsController>BaseService.services.find(s => s.name == 'colors').controller;
 
         this.objects.forEach(o => {
+            o.tags = [];
             o.tagIds.forEach(ti => {
                 let tag = tagsController.getById(new HttpParams().set('id', ti.toString()))
-                o.tags = [];
                 o.tags.push(tag.data);
             })
             o.color = colorsController.getById(new HttpParams().set('id', o.colorId.toString())).data

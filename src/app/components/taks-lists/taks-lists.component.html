@@ -1,11 +1,17 @@
-<div class="container full-width full-height " [style.background-color]='getColor()' style="border: 1px black solid;">
-  <div class="container flex flex-column">
-    <div class="title full-width flex hori-center">{{taskLists.title}}</div>
+<div class="container felx" [style.background-color]='getColor()'>
+  <div class="title full-width flex hori-center">{{taskLists.title}}</div>
+  <div style="margin-top: 1rem;">
+    <mat-divider></mat-divider>
+  </div>
 
-    <div class="full-width flex hori-end vert-end">
-      <button mat-fab color="primary" class="add-button">
-        <mat-icon>add</mat-icon>
-      </button>
-    </div>
+  <div class="tasks postion-relative full-width elevation" *ngFor="let task of taskLists.tasks">
+    <app-tasks [task]="task" (onDelete)="onTaskDelete(task)" (onUpdate)="openDialog(task)"></app-tasks>
+    <mat-divider></mat-divider>
+  </div>
+
+  <div class="footer full-width flex hori-end vert-end">
+    <button mat-fab color="primary" class="add-button" (click)="openDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
   </div>
 </div>

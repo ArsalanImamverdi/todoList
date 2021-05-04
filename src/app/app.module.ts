@@ -12,6 +12,7 @@ import { TaskListsService } from './services/task-lists.service';
 import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedComponentsModule } from './shared/components/shared-components.module';
+import { MaterialModule } from './shared/modules/material.module';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { SharedComponentsModule } from './shared/components/shared-components.mo
     HttpClientModule,
     ComponentsModule,
     BrowserAnimationsModule,
-    SharedComponentsModule
-
+    SharedComponentsModule,
+    MaterialModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TodoListHttpInterceptor, multi: true }, UsersService, TasksService, TagsService, ColorsService, TaskListsService],
   bootstrap: [AppComponent]

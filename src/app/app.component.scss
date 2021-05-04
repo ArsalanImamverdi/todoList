@@ -1,4 +1,12 @@
-.container {
-  margin: 1rem;
+.nav-container {
+  height: 60px;
   padding: 1rem;
+
+  .nav-title {
+    font-size: x-large;
+  }
+
+  .nav-login {
+    font-size: medium;
+  }
 }

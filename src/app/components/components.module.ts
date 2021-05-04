@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaksListsComponent } from './taks-lists/taks-lists.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { MaterialModule } from '../shared/modules/material.module';
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskFormComponent } from './task-form/task-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const component = [
   TaksListsComponent,
@@ -12,13 +13,13 @@ const component = [
 ]
 
 @NgModule({
-  declarations: [component],
+  declarations: [component, TasksComponent, TaskFormComponent],
   imports: [
     CommonModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule 
   ],
-  exports: [component]
+  exports: [component],
 })
 export class ComponentsModule { }

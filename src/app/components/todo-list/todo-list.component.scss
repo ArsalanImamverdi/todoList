@@ -1,4 +1,7 @@
-.container{
-    // margin: 1rem;
-    border-radius: 10%;
+
+
+@media screen and (max-width: 767px) {
+    .container{
+        flex-direction:  column;
+    }
 }

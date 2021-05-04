@@ -13,14 +13,14 @@ export class TaskListsController extends Controller<TaskListModel>{
     constructor() {
         super();
 
-        let tasksController = <TaskController>BaseService.services.find(s => s.name == 'tags').controller
+        let tasksController = <TaskController>BaseService.services.find(s => s.name == 'tasks').controller
         let colorsController = <ColorsController>BaseService.services.find(s => s.name == 'colors').controller;
 
         this.objects.forEach(o => {
+            o.tasks = [];
             o.taskIds.forEach(ti => {
-                let tag = tasksController.getById(new HttpParams().set('id', ti.toString()))
-                o.tasks = [];
-                o.tasks.push(tag.data);
+                let task = tasksController.getById(new HttpParams().set('id', ti.toString()))
+                o.tasks.push(task.data);
             });
             o.color = colorsController.getById(new HttpParams().set('id', o.colorId.toString())).data
         });

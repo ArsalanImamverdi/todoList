@@ -1,0 +1,14 @@
+<div class="container position-relative flex vert-center">
+  <div class="title">{{task.title}}</div>
+  <div class="control flex">
+    <button mat-icon-button color="primary" (click)="task.done = !task.done">
+      <mat-icon>{{task.done?'done_all':'check'}}</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="onDelete.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="onUpdate.emit()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
+</div>
