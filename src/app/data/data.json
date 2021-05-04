@@ -1,0 +1,56 @@
+{
+  "serviceData": {
+    "users": [{
+        "id": "1",
+        "name": "arsalan",
+        "username": "arsalan",
+        "password": "827CCB0EEA8A706C4C34A16891F84E7B"
+      },
+      {
+        "id": "2",
+        "name": "test",
+        "username": "test",
+        "password": "827CCB0EEA8A706C4C34A16891F84E7B"
+      }
+    ],
+    "colors": [{
+        "id": 1,
+        "red": "FF",
+        "green": "00",
+        "blue": "3B"
+      },
+      {
+        "id": 2,
+        "red": "EE",
+        "green": "EE",
+        "blue": "EE"
+      }
+    ],
+    "tags": [{
+      "id": 1,
+      "title": "important",
+      "colorId": 1
+    }],
+
+    "tasks": [{
+      "id": 1,
+      "title": "task1",
+      "date": "2020-05-02",
+      "note": "",
+      "colorId": 2,
+      "tagIds": [1]
+    }],
+
+    "taskLists": [{
+        "title": "List1",
+        "colorId": 2,
+        "taskIds": [1]
+      },
+      {
+        "title": "List2",
+        "colorId": 2,
+        "taskIds": [1]
+      }
+    ]
+  }
+}
